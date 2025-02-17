@@ -1,44 +1,87 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <!-- Profil User -->
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_cart"
-            android:icon="@drawable/ic_shopping_cart"
-            android:title="@string/menu_cart"/>
+            android:id="@+id/nav_profile"
+            android:title="Profil"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_profile" />
     </group>
 
-    <item android:title="@string/menu_map">
+    <!-- Grup Menu Utama -->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_premium"
+            android:title="Premium"
+            android:background="?attr/selectableItemBackground"
+
+            android:icon="@drawable/ic_premium" />
+
+        <item
+            android:id="@+id/nav_bookmark"
+            android:title="Markah"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_bookmark" />
+
+        <item
+            android:id="@+id/nav_career"
+            android:title="Karier"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_karir" />
+
+        <item
+            android:id="@+id/nav_list"
+            android:title="Daftar"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_list" />
+
+        <item
+            android:id="@+id/nav_spaces"
+            android:title="Spaces"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_spaces" />
+
+        <item
+            android:id="@+id/nav_monetization"
+            android:title="Monetisasi"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_monetization" />
+    </group>
+
+
+    <!-- Submenu Pengaturan & Dukungan -->
+    <item
+        android:id="@+id/nav_pengaturan_dukungan"
+        android:title="Pengaturan Dan Dukungan"
+        android:background="?attr/selectableItemBackground"
+        android:icon="@drawable/ic_setting"
+        app:actionViewClass="android.widget.ExpandableListView">
+
         <menu>
             <item
-                android:id="@+id/nav_map"
-                android:icon="@drawable/ic_map"
-                android:title="@string/menu_map"/>
+                android:id="@+id/nav_pengaturan"
+                android:title="Pengaturan dan privasi"
+                android:background="?attr/selectableItemBackground"
+                android:icon="@drawable/ic_setting"/>
+
             <item
-                android:id="@+id/nav_hotel"
-                android:icon="@drawable/ic_hotel"
-                android:title="@string/menu_hotel"/>
-            <item
-                android:id="@+id/nav_subway"
-                android:icon="@drawable/ic_subway"
-                android:title="@string/menu_subway"/>
+                android:id="@+id/nav_bantuan"
+                android:background="?attr/selectableItemBackground"
+                android:title="Pusat Bantuan"
+                android:icon="@drawable/ic_help"/>
         </menu>
     </item>
 
-
-
+    <!-- Mode Gelap -->
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_dark_mode"
+            android:title="Mode Gelap"
+            android:background="?attr/selectableItemBackground"
+            android:icon="@drawable/ic_darkmode" />
+    </group>
 </menu>

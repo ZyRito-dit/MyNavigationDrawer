@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/black"
+    tools:context=".ui.FragmentSebutan">
+
+<LinearLayout
+    android:id="@+id/linier_sebutan"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:layout_margin="32dp"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvjudul_sebutan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="65dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Bergabung dalam percakapan "
+        android:textColor="@color/white"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvisi_sebutan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ketika seseorang di X menyebut Anda di postingan atau balasan, Anda dapat melihatnya di sini. "
+        android:textColor="@color/gray"
+        android:textSize="18dp" />
+
+</LinearLayout>
+
+</LinearLayout>

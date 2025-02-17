@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/nav_homes">
+
+
+    <fragment
+        android:id="@+id/nav_homes"
+        android:name="com.example.mynavigationdrawer.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_homes_to_navigation_notification"
+            app:destination="@id/navigation_notification"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_nav_homes_to_navigation_mail"
+            app:destination="@id/navigation_mail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.mynavigationdrawer.ui.SearchFragment.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.example.mynavigationdrawer.ui.NotificationFragment.NotificationFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notofication" >
+        <action
+            android:id="@+id/action_navigation_notification_to_nav_homes"
+            app:destination="@id/nav_homes"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_notification_to_navigation_mail"
+            app:destination="@id/navigation_mail"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_Komunitas"
+        android:name="com.example.mynavigationdrawer.ui.CommunityFragment.CommunityFragment"
+        android:label="Community"
+        tools:layout="@layout/fragment_community" />
+    <fragment
+        android:id="@+id/navigation_mail"
+        android:name="com.example.mynavigationdrawer.ui.MailFragment.MailFragment"
+        android:label="Mail"
+        tools:layout="@layout/fragment_mail" >
+        <action
+            android:id="@+id/action_navigation_mail_to_nav_homes"
+            app:destination="@id/nav_homes"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_mail_to_navigation_notification"
+            app:destination="@id/navigation_notification"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+
+</navigation>
