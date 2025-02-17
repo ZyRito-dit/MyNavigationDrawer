@@ -3,6 +3,9 @@ package com.example.mynavigationdrawer
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.Menu
+import android.view.View
+import androidx.core.content.ContextCompat
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -24,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var profileCircleImageView: CircleImageView
     private var profileImageUrl = "https://i.pinimg.com/736x/eb/3f/36/eb3f36a46cf0db63940601e786349ab2.jpg"
 
+    private var isFabOpen = false
 
     @SuppressLint("CheckResult")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,34 +35,47 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        window.statusBarColor = getColor(R.color.black)
+
+
 
         setSupportActionBar(binding.appBarMain.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false) // Hilangkan title
 
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         profileCircleImageView = navView.getHeaderView(0).findViewById(R.id.imageView)
-        Glide.with(this)
-            .load(profileImageUrl)
-            .load(profileCircleImageView)
-
+        Glide.with(this).load(profileImageUrl).into(profileCircleImageView)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow, R.id.nav_cart
-            ), drawerLayout)
+            setOf(R.id.nav_homes, R.id.navigation_search, R.id.navigation_notification, R.id.navigation_Komunitas, R.id.navigation_mail),
+            drawerLayout
+        )
+
+
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        binding.bottomNavigation.setupWithNavController(navController)
+
+
+
+        binding.appBarMain.fabMain.setOnClickListener {
+            toggleFab()
+        }
+    }
+
+    private fun toggleFab() {
+        if (isFabOpen) {
+            binding.appBarMain.fabGroup.visibility = View.GONE
+        } else {
+            binding.appBarMain.fabGroup.visibility = View.VISIBLE
+        }
+        isFabOpen = !isFabOpen
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
